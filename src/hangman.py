@@ -31,6 +31,8 @@ def main():
             else:
                 wrong_counter += 1
                 print("Wrong guess")
+                print(f"You have {5 - wrong_counter} guesses left")
+            print(f"Guessed letters: {guessed_letters}.")
             print()
 
 
@@ -41,9 +43,10 @@ def main():
                 print("_", end=" ")
         print()
 
-        if right_counter == len(word_char_list):
+        if right_counter == len(word_char_list) - 1:
             print("You won! 🎉")
             break
+
         elif wrong_counter == 5:
             print("You lost!")
             print(f"The word was: {word}! Better luck next time! 🍀")
